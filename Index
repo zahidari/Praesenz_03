@@ -1,0 +1,55 @@
+package main;
+
+import java.util.ArrayList;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
+
+public class Index {
+	
+	//index
+	HashMap<String, List<Integer>> map = new HashMap<>();
+	
+	public Index() {
+		
+	}
+	
+	public void wortHinzufuegen(String input, Integer seitenZahl) {
+		
+		
+		//map.computeIfAbsent("apple", k -> new ArrayList<>()).add(2);
+		if(map.get(input)== null)									//fragt ab, ob der Schlüssel existiert
+			map.put(input, new ArrayList<Integer>());
+		
+		
+		//map.put("mango", new ArrayList<Integer>(Arrays.asList(0, 4, 8, 9, 12)));
+		map.get(input).add(seitenZahl);								//fügt die Zahl in deim Schlüssel ein
+		
+	}
+	
+	
+	
+	public String toString() {
+		/* Druckt den Map folgendermassen aus:
+		 * 
+		 * <begriff1>: [<seite1>, <seite2>, …, <seiteN>]
+		 * <begriff2>: [<seite1>, <seite2>, …, <seiteN>]
+		 * 
+		 */
+		StringBuilder returnStr = new StringBuilder();
+		String str = "";
+		
+		for(Entry <String, List<Integer>> e : map.entrySet()) {  //**<begriff1>: [<seite1>, <seite2>, …, <seiteN>]
+			
+			
+			returnStr.append(e.getKey()+": ");				// <begriff1>: [
+			
+			returnStr.append( e.getValue());			// <seite1>, <seite2>, …, <seiteN>
+			
+			returnStr.append("\n");								//  ]
+			
+		}
+		return returnStr.toString();
+	}
+}	
