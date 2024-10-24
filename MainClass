@@ -1,0 +1,19 @@
+package main;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Index index = new Index();
+		index.wortHinzufuegen("boolean", 1);
+		index.wortHinzufuegen("boolean", 15);
+		index.wortHinzufuegen("boolean", 3);
+		index.wortHinzufuegen("boolean", 12);
+		index.wortHinzufuegen("if", 415);
+		index.wortHinzufuegen("if", 2);
+		index.wortHinzufuegen("if", 10);
+		index.wortHinzufuegen("if", 45);
+		System.out.println(index.toString());
+	}
+
+}
